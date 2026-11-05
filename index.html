@@ -206,6 +206,111 @@ background:radial-gradient(ellipse at 50% 48%,#233039,#101e26 44%,#0b1319 83%);b
 }
 @media(prefers-reduced-motion:reduce){.nexus-orbit *,.nexus-orbit:before,.nexus-orbit:after{animation:none!important;transition:none!important}}
 
+
+/* BRIQ Network as a first-class Nexus workspace. No real data in public preview. */
+main:has(.briq-network:not([hidden])){max-width:1440px;padding:22px 25px 32px}
+.briq-network{max-width:1380px;margin:0 auto}
+.bn-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:#8a7b72;margin:0 0 19px}
+.bn-crumb{padding:4px 0;background:none;border:0;color:#8a7b72;cursor:pointer}
+.bn-crumb:hover{color:#ac2630}
+.bn-crumb span{padding-left:9px;color:#c5b7ae}
+.bn-breadcrumb strong{font-weight:700;color:#38302d}
+.bn-crumb-trail{color:#a62733}
+.bn-shell{display:grid;grid-template-columns:255px minmax(0,1fr);border:1px solid #e6ded4;border-radius:20px;background:#fffdfa;min-height:690px;box-shadow:0 20px 60px #42332c0a;overflow:hidden}
+.bn-sidebar{background:#242123;color:#fff6f0;padding:25px 17px 20px;display:flex;flex-direction:column;gap:18px}
+.bn-sidebar-head{display:flex;align-items:center;gap:13px;border-bottom:1px solid #ffffff24;padding:2px 5px 21px}
+.bn-sidebar-head img{width:58px;height:49px;object-fit:contain;background:#fffaf7;border-radius:9px;padding:2px}
+.bn-sidebar-head>span{font-size:15px;font-weight:520;letter-spacing:.03em;white-space:nowrap}
+.bn-sidebar-head>span strong{font-weight:760;color:#f7efea}
+.bn-sidebar-head small{display:block;font-size:9px;color:#b4a8a3;letter-spacing:0;margin-top:2px}
+.bn-label{color:#a9a09c;font-size:10px;letter-spacing:.17em;font-weight:700;padding:4px 10px 0}
+.bn-nav{display:flex;flex-direction:column;gap:4px}
+.bn-nav-link{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:12px 11px;color:#c8bfbb;border:1px solid transparent;border-radius:10px;background:none;font-size:12px;cursor:pointer;transition:background .17s,color .17s,transform .17s}
+.bn-nav-link:hover{background:#ffffff13;color:#fffaf8;transform:translateX(2px)}
+.bn-nav-link[aria-current=page]{background:#c0363e21;border-color:#c9575b4d;color:#fff9f6}
+.bn-nav-icon{font-size:18px;display:grid;place-items:center;color:#e1a6a5;width:23px;flex:0 0 23px}
+.bn-nav-link .bn-nav-text{flex:1}
+.bn-nav-arrow{color:#e1ada5;opacity:0}
+.bn-nav-link[aria-current=page] .bn-nav-arrow,.bn-nav-link:hover .bn-nav-arrow{opacity:1}
+.bn-sidebar-footer{margin-top:auto;border-top:1px solid #ffffff20;padding:19px 8px 0;color:#ada39f;font-size:10px;line-height:1.6}
+.bn-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0aa8c;box-shadow:0 0 0 3px #e0aa8c18;margin-right:6px}
+.bn-content{min-width:0;padding:36px clamp(20px,3.5vw,49px) 44px}
+.bn-kicker{font-size:10px;letter-spacing:.19em;color:#a18a80;font-weight:760}
+.bn-kicker-sep{color:#bd4d54}
+.bn-content-head{margin-bottom:29px}
+.bn-content-head h1{font:400 clamp(37px,4vw,53px)/1.2 Georgia,serif;letter-spacing:-.035em;margin:8px 0 8px}
+.bn-content-head h1 span{color:#af2832}
+.bn-content-head>p{font-size:13px;color:#847b73}
+.bn-spotlight{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(175px,.75fr);gap:12px;align-items:stretch;padding:34px 32px;border-radius:17px;color:#faf4ed;background:linear-gradient(111deg,#2b2223,#47292e 73%,#602c36);overflow:hidden;position:relative;min-height:277px}
+.bn-spotlight:after{content:"";position:absolute;right:-60px;top:-110px;width:350px;height:350px;border:1px solid #ffffff23;border-radius:50%;pointer-events:none}
+.bn-spotlight-label{font-size:9px;letter-spacing:.18em;color:#e4b6ad;font-weight:700}
+.bn-signal{display:inline-block;width:6px;height:6px;border-radius:50%;background:#e7a69e;margin-right:7px;box-shadow:0 0 10px #e7a69e}
+.bn-spotlight h2{font:400 clamp(31px,3.2vw,43px)/1.16 Georgia,serif;margin:14px 0}
+.bn-spotlight h2 em{color:#eab3aa}
+.bn-spotlight p{font-size:12px;color:#d2beb8;max-width:410px;line-height:1.65}
+.bn-primary{margin-top:20px;border:1px solid #e9bfba66;color:#fff7f2;background:#b43842;padding:11px 16px;border-radius:8px;font-size:12px;font-weight:670}
+.bn-primary:hover{background:#c7454e}
+.bn-primary span{margin-left:14px}
+.bn-spotlight-graphic{align-self:center;justify-self:center;position:relative;width:170px;height:170px;border-radius:50%;border:1px solid #e6b8b86b;box-shadow:0 0 0 11px #e8adac12,0 0 0 12px #e8adac29,0 0 0 33px #e8adac09,0 0 0 34px #e8adac18;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transform:rotate(-9deg)}
+.bn-spotlight-graphic span{font:400 34px Georgia,serif;letter-spacing:.1em}
+.bn-spotlight-graphic strong{font-size:15px;letter-spacing:.16em}
+.bn-spotlight-graphic i{font-size:31px;color:#e8a29b;margin-top:6px}
+.bn-section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin:36px 0 18px}
+.bn-section-heading h2{font:400 27px Georgia,serif}
+.bn-section-heading p{font-size:11px;color:#9b8e84;margin-top:5px}
+.bn-count{font-size:10px;color:#ae3440;font-weight:740;letter-spacing:.12em;white-space:nowrap}
+.bn-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.bn-tile{text-align:left;display:flex;flex-direction:column;gap:10px;align-items:flex-start;background:#faf8f4;border:1px solid #ebe1d8;border-radius:13px;padding:19px 17px;min-height:147px;cursor:pointer;transition:transform .17s,box-shadow .17s,border-color .17s}
+.bn-tile:hover{border-color:#bf8888;transform:translateY(-3px);box-shadow:0 13px 27px #5a3a2914}
+.bn-tile-symbol{font-size:24px;color:#ad2f3a;line-height:1}
+.bn-tile strong{font-size:13px;font-weight:710;color:#302724}
+.bn-tile small{font-size:10px;line-height:1.6;color:#8c8077}
+.bn-tile-footer{margin-top:auto;width:100%;font-size:10px;color:#aa3a42;display:flex;justify-content:space-between;gap:7px}
+.bn-module-hero{display:flex;align-items:center;gap:23px;background:linear-gradient(105deg,#f9f1eb,#fff9f5);border:1px solid #efdfd3;border-radius:18px;padding:30px}
+.bn-module-icon{width:79px;height:79px;flex:0 0 79px;border-radius:19px;background:#b33842;color:#fff6ef;display:grid;place-items:center;font-size:39px}
+.bn-module-eyebrow{font-size:10px;letter-spacing:.18em;color:#aa6f6c;font-weight:700}
+.bn-module-hero h2{font:400 clamp(28px,3vw,41px)/1.15 Georgia,serif;margin:8px 0}
+.bn-module-hero p{font-size:13px;color:#85776d;max-width:560px}
+.bn-module-work{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:20px;margin-top:26px}
+.bn-module-work>div:first-child{padding:26px;background:#fff;min-height:260px;border:1px solid #ebdfd5;border-radius:15px}
+.bn-work-kicker{font-size:10px;letter-spacing:.17em;color:#9e877b;font-weight:680}
+.bn-module-work h3{font:400 30px/1.2 Georgia,serif;margin:12px 0 17px}
+.bn-module-work h3 span{color:#b02c36}
+.bn-module-work p{font-size:12px;color:#867a72;line-height:1.8}
+.bn-open-live{display:inline-flex;gap:20px;margin-top:25px;background:#b33842;color:white;padding:13px 17px;border-radius:8px;text-decoration:none;font-size:12px;font-weight:650}
+.bn-open-live:hover{background:#952632}
+.bn-open-live span{font-size:18px}
+.bn-status-panel{background:#f7f4ee;border:1px solid #e8e1d6;border-radius:15px;padding:28px 24px;display:flex;flex-direction:column;gap:13px}
+.bn-status-label{font-size:10px;letter-spacing:.11em;color:#9f7a65;font-weight:730}
+.bn-status-panel strong{font:400 25px Georgia,serif}
+.bn-return{background:none;border:none;color:#a32d37;font-size:12px;padding:18px 0;margin-top:12px}
+.bn-return:hover{text-decoration:underline}
+@media(max-width:900px){.bn-shell{grid-template-columns:208px minmax(0,1fr)}.bn-sidebar{padding:20px 10px}.bn-content{padding:27px 22px}.bn-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.bn-spotlight-graphic{width:127px;height:127px}.bn-spotlight-graphic span{font-size:27px}}
+@media(max-width:650px){
+ main:has(.briq-network:not([hidden])){padding:14px 10px 24px}
+ .bn-breadcrumb{padding:0 6px}
+ .bn-shell{display:flex;flex-direction:column;border-radius:14px}
+ .bn-sidebar{padding:16px;gap:9px}
+ .bn-sidebar-head{padding-bottom:12px}
+ .bn-sidebar-footer,.bn-sidebar .bn-label{display:none}
+ .bn-nav{display:flex;flex-direction:row;gap:6px;overflow:auto;padding:4px 0 2px;scrollbar-width:thin}
+ .bn-nav-link{flex:0 0 auto;padding:10px 11px;width:auto;border:1px solid #ffffff1c;font-size:11px}
+ .bn-nav-icon{font-size:15px;width:16px;flex-basis:16px}
+ .bn-nav-arrow{display:none}
+ .bn-content{padding:25px 16px}
+ .bn-content-head h1{font-size:35px}
+ .bn-spotlight{grid-template-columns:1fr;padding:26px 23px;min-height:0}
+ .bn-spotlight-graphic{display:none}
+ .bn-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .bn-tile{padding:15px 13px;min-height:145px}
+ .bn-module-work{grid-template-columns:1fr}
+ .bn-module-hero{padding:21px;gap:13px}
+ .bn-module-icon{width:54px;height:54px;flex-basis:54px;font-size:28px;border-radius:13px}
+ .bn-module-hero h2{font-size:26px}
+ .bn-module-work h3{font-size:25px}
+}
+@media(max-width:360px){.bn-directory{grid-template-columns:1fr}.bn-tile{min-height:115px}}
+
 </style>
 </head>
 <body>
@@ -246,6 +351,65 @@ background:radial-gradient(ellipse at 50% 48%,#233039,#101e26 44%,#0b1319 83%);b
 <div class="module-hero"><span class="tag" id="detail-kicker"></span><h2 id="detail-title"></h2><p id="detail-copy"></p><img id="briq-logo" alt="BRIQ dergisi logosu" src="https://briqjournal.com/assets/briq-logo-tr.png" hidden></div>
 <div class="module-content"><span class="eyebrow">ÇALIŞMA ALANLARI</span><h3 id="detail-subtitle"></h3><div id="detail-links"></div><p class="note" id="detail-note"></p></div>
 </div>
+</section>
+
+<section class="briq-network" id="briq-network" hidden aria-labelledby="bn-title">
+ <div class="bn-breadcrumb">
+  <button type="button" class="bn-crumb" id="bn-home">Nexus <span aria-hidden="true">/</span></button>
+  <button type="button" class="bn-crumb" id="bn-root">BRIQ <span aria-hidden="true">/</span></button>
+  <strong>BRIQ Network</strong><span class="bn-crumb-trail" id="bn-crumb-trail"></span>
+ </div>
+ <div class="bn-shell">
+  <aside class="bn-sidebar" aria-label="BRIQ Network menüsü">
+    <div class="bn-sidebar-head">
+     <img src="https://briqjournal.com/assets/briq-logo-tr.png" width="65" height="50" alt="BRIQ logosu" />
+     <span>BRIQ <strong>NETWORK</strong><small>Yayın &amp; ilişkiler çalışma alanı</small></span>
+    </div>
+    <div class="bn-label">ÇALIŞMA ALANLARI</div>
+    <nav id="bn-navigation" class="bn-nav" aria-label="BRIQ Network bölümleri"></nav>
+    <div class="bn-sidebar-footer"><span class="bn-live-dot"></span> Mevcut BRIQ sistemine bağlı bağlantılar</div>
+  </aside>
+  <div class="bn-content">
+    <div class="bn-content-head">
+      <div class="bn-kicker">BRIQ / NETWORK <span class="bn-kicker-sep">·</span> KURUMSAL ÇALIŞMA ALANI</div>
+      <h1 id="bn-title">BRIQ Network<span>.</span></h1>
+      <p id="bn-subtitle">Yayıncılık ve kurumsal ilişkiler tek çatı altında.</p>
+    </div>
+    <section id="bn-landing">
+      <div class="bn-spotlight">
+       <div>
+        <span class="bn-spotlight-label"><span class="bn-signal"></span> BRIQ NETWORK / İLK ENTEGRASYON</span>
+        <h2>Yayın sürecinden<br><em>ilişki ağına.</em></h2>
+        <p>BRIQ'in mevcut çalışma yapısı artık Nexus içinde kendi yerinde. Bölümler arasında geçiş yapın; canlı işlemler için korumalı BRIQ sistemini açın.</p>
+        <button id="bn-enter-editorial" class="bn-primary" type="button">Yayın ve Hakemlik <span>↗</span></button>
+       </div>
+       <div class="bn-spotlight-graphic" aria-hidden="true"><span>BRIQ</span><strong>NETWORK</strong><i>✳</i></div>
+      </div>
+      <div class="bn-section-heading"><div><h2>Çalışma alanları</h2><p>Mevcut BRIQ Network yapısındaki dokuz bölüm</p></div><span class="bn-count">09 MODÜL</span></div>
+      <div id="bn-directory" class="bn-directory"></div>
+    </section>
+    <section id="bn-module" hidden>
+      <div class="bn-module-hero">
+        <div class="bn-module-icon" id="bn-module-icon" aria-hidden="true"></div>
+        <div><span class="bn-module-eyebrow">BRIQ NETWORK / MODÜL</span><h2 id="bn-module-title"></h2><p id="bn-module-description"></p></div>
+      </div>
+      <div class="bn-module-work">
+        <div>
+         <span class="bn-work-kicker">MEVCUT ÇALIŞMA ORTAMI</span>
+         <h3>Çalışmaya buradan devam edin<span>.</span></h3>
+         <p>Bu bölümün navigasyonu Nexus içine alındı. Gerçek kayıtlar, yetkiler ve düzenleme işlemleri hâlen mevcut Cloudflare Access korumalı BRIQ Network'te çalışıyor.</p>
+         <a id="bn-open-live" href="https://network.briqjournal.com/" target="_blank" rel="noopener noreferrer" class="bn-open-live">Mevcut BRIQ ekranını aç <span>↗</span></a>
+        </div>
+        <div class="bn-status-panel">
+         <span class="bn-status-label"><span class="bn-live-dot"></span> ENTEGRASYON DURUMU</span>
+         <strong>Güvenli geçiş</strong>
+         <p>Mevcut veriler ve yazma yetkileri korunuyor. Nexus'un bu önizlemesinde gerçek kişisel kayıt veya kurumsal veri gösterilmiyor.</p>
+        </div>
+      </div>
+      <button class="bn-return" id="bn-return" type="button">← BRIQ Network bölümlerine dön</button>
+    </section>
+  </div>
+ </div>
 </section>
 </main>
 <footer>ÇİN İŞ DER · NEXUS — ÖZEL TASARIM ÖNİZLEMESİ · GERÇEK KURUM KAYITLARI İÇERMEZ</footer>
@@ -306,11 +470,61 @@ for(const n of nodes){
  n.addEventListener("focus",()=>active(n.dataset.unit));
  n.addEventListener("blur",()=>active(null));
 }
+const networkModules = [{"id":"overview","title":"Çalışma Masası","description":"Güncel editoryal odak, açık işler ve süreçler","path":"calisma-masasi","icon":"◫"},{"id":"editorial","title":"Yayın ve Hakemlik","description":"DergiPark bağlantıları, makale ve hakem süreçleri","path":"yayin-ve-hakemlik","icon":"✳"},{"id":"people","title":"Kişiler ve İlişkiler","description":"Yazarlar, hakemler, kurumlar ve iletişim geçmişi","path":"kisiler-ve-iliskiler","icon":"◎"},{"id":"campaigns","title":"Dosyalar ve Davetler","description":"Özel sayı çağrıları, hedef yazarlar ve davetler","path":"dosyalar-ve-davetler","icon":"▤"},{"id":"publications","title":"Yayın Geçmişi","description":"Sayılar, makaleler ve yazar katkıları","path":"yayin-gecmisi","icon":"▦"},{"id":"boards","title":"Kurullar ve Görevler","description":"Yayın kurulu, danışma kurulu ve rol geçmişi","path":"kurullar-ve-gorevler","icon":"◇"},{"id":"mail","title":"E-posta İnceleme","description":"Yazışma eşleştirme ve onay kuyruğu","path":"e-posta-inceleme","icon":"✉"},{"id":"institutions","title":"Kurum Rehberi","description":"Üniversiteler, kuruluşlar ve temaslar","path":"kurum-rehberi","icon":"⌘"},{"id":"administration","title":"Kullanıcılar ve Yetkiler","description":"Üyelik ve erişim yönetimi (yetkiye bağlı)","path":"kullanicilar-ve-yetkiler","icon":"⚿"}];
+const networkBase="https://network.briqjournal.com";
+function bnButton(className,text,fn){
+ const b=document.createElement("button");b.className=className;b.type="button";b.textContent=text;b.addEventListener("click",fn);return b;
+}
+function bnRoute(id){location.hash="/briq"+(id?"/"+id:"");}
+function bnInit(){
+ const navigation=$("bn-navigation"),directory=$("bn-directory");
+ if(navigation.children.length)return;
+ for(const item of networkModules){
+  const nav=bnButton("bn-nav-link","");
+  nav.dataset.networkModule=item.id;
+  const sym=document.createElement("span");sym.className="bn-nav-icon";sym.textContent=item.icon;
+  const label=document.createElement("span");label.className="bn-nav-text";label.textContent=item.title;
+  const arrow=document.createElement("span");arrow.className="bn-nav-arrow";arrow.textContent="›";
+  nav.append(sym,label,arrow);
+  nav.addEventListener("click",()=>bnRoute(item.id));navigation.append(nav);
+  const card=bnButton("bn-tile","");
+  const icon=document.createElement("span");icon.className="bn-tile-symbol";icon.textContent=item.icon;
+  const title=document.createElement("strong");title.textContent=item.title;
+  const desc=document.createElement("small");desc.textContent=item.description;
+  const foot=document.createElement("span");foot.className="bn-tile-footer";
+  const label2=document.createElement("span");label2.textContent="Çalışma alanını aç";
+  const arrow2=document.createElement("span");arrow2.textContent="↗";
+  foot.append(label2,arrow2);card.append(icon,title,desc,foot);
+  card.addEventListener("click",()=>bnRoute(item.id));directory.append(card);
+ }
+ $("bn-enter-editorial").addEventListener("click",()=>bnRoute("editorial"));
+ $("bn-return").addEventListener("click",()=>bnRoute(""));
+ $("bn-root").addEventListener("click",()=>bnRoute(""));
+ $("bn-home").addEventListener("click",()=>{location.hash="/";});
+}
+function bnRender(id){
+ bnInit();
+ const item=networkModules.find(m=>m.id===id);
+ $("bn-landing").hidden=!!item;$("bn-module").hidden=!item;
+ $("bn-crumb-trail").textContent=item?" / "+item.title:"";
+ $("bn-title").textContent=item?item.title:"BRIQ Network";
+ $("bn-subtitle").textContent=item?item.description:"Yayıncılık ve kurumsal ilişkiler tek çatı altında.";
+ for(const nav of $("bn-navigation").children){
+  if(nav.dataset.networkModule===id)nav.setAttribute("aria-current","page");else nav.removeAttribute("aria-current");
+ }
+ if(!item)return;
+ $("bn-module-icon").textContent=item.icon;
+ $("bn-module-title").textContent=item.title;
+ $("bn-module-description").textContent=item.description;
+ $("bn-open-live").href=networkBase+"/"+item.path+"/";
+}
+
 function route(){
- const key=location.hash.replace(/^#\/?/,"").split("/")[0];
- const data=Object.prototype.hasOwnProperty.call(units,key)?units[key]:null;
- $("home").hidden=!!data;$("detail").hidden=!data;
- document.title=(data?data.name+" · ":"")+"Nexus · Türk-Çin İş Der";
+ const parts=location.hash.replace(/^#\/?/,"").split("/").filter(Boolean);
+ const key=parts[0]||"",network=key==="briq",data=Object.prototype.hasOwnProperty.call(units,key)?units[key]:null;
+ $("home").hidden=!!data;$("detail").hidden=!data||network;$("briq-network").hidden=!network;
+ document.title=network?"BRIQ Network · Nexus":(data?data.name+" · ":"")+"Nexus · Türk-Çin İş Der";
+ if(network){bnRender(parts[1]);window.scrollTo(0,0);return;}
  if(!data){requestAnimationFrame(draw);return;}
  $("detail-kicker").textContent=data.kicker;$("detail-title").textContent=data.name;
  $("detail-copy").textContent=data.copy;$("detail-subtitle").textContent=data.subtitle;
