@@ -115,6 +115,97 @@ h1{font-size:32px}
 .module-hero h2{font-size:50px}
 }
 @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+
+/* NEXUS ORBIT / animated connection-map replacement — source-of-truth preview */
+.intro h1{font-size:clamp(34px,4.1vw,56px);margin-top:10px}
+.intro p{max-width:550px;margin:0 auto 0}
+.nexus-orbit{position:relative;isolation:isolate;overflow:hidden;min-height:565px;height:min(66vh,670px);max-height:720px;max-width:1160px;margin:24px auto 0;border-radius:26px;border:1px solid #304049;
+background:radial-gradient(ellipse at 50% 48%,#233039,#101e26 44%,#0b1319 83%);box-shadow:0 22px 62px #2b26211e}
+.nexus-orbit:after{content:"";position:absolute;inset:1px;border:1px solid #fff1;border-radius:25px;pointer-events:none}
+.nexus-orbit .orbit-grain{position:absolute;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(#c0ccd146 .6px,transparent .6px);background-size:26px 26px;mask-image:radial-gradient(ellipse,#000 0%,transparent 84%)}
+.nexus-orbit .orbit-halo{position:absolute;inset:8%;pointer-events:none;background:radial-gradient(ellipse at 40% 40%,#aa5f5240 0,transparent 45%),radial-gradient(ellipse at 70% 55%,#53aea235 0,transparent 38%);filter:blur(39px);animation:nebula-move 16s ease-in-out infinite alternate}
+.nexus-orbit .orbit-ring{position:absolute;top:50%;left:50%;border-radius:50%;pointer-events:none;z-index:0}
+.nexus-orbit .ring-a{width:380px;height:380px;border:1px dashed #b3bfc429;transform:translate(-50%,-50%);animation:orbit-spin 55s linear infinite}
+.nexus-orbit .ring-a:before{content:"";position:absolute;left:50%;top:-3px;width:6px;height:6px;border-radius:50%;background:#ef9b92;box-shadow:0 0 16px #e38d88}
+.nexus-orbit .ring-b{width:550px;height:550px;border:1px solid #e1bcb41a;border-top-color:#86b7bc35;border-bottom-color:#86b7bc35;transform:translate(-50%,-50%);animation:orbit-spin 85s linear infinite reverse}
+.nexus-orbit #trails{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.nexus-orbit #trails path[data-edge]{fill:none;stroke-width:1.65;stroke-dasharray:3 9;stroke-opacity:.68;animation:edge-flow 17s linear infinite;transition:stroke-opacity .25s,stroke-width .25s}
+.nexus-orbit #trails path[data-edge=briq]{stroke:#de918a}
+.nexus-orbit #trails path[data-edge=icst]{stroke:#70bfb6}
+.nexus-orbit #trails path[data-edge=association]{stroke:#e0c29d}
+.nexus-orbit #trails path.hot{stroke-opacity:1;stroke-width:3;stroke-dasharray:none;filter:drop-shadow(0 0 6px #e0a59b)}
+.nexus-orbit .stage-top{position:absolute;left:29px;right:29px;top:24px;display:flex;justify-content:space-between;z-index:3;font-size:10px;letter-spacing:.15em;color:#92a5ad;font-weight:700}
+.nexus-orbit .live-led{display:inline-block;width:7px;height:7px;margin-right:10px;border-radius:50%;background:#e6a7a0;box-shadow:0 0 14px #e6a7a0;animation:led-pulse 3s ease-in-out infinite}
+.nexus-orbit .hub{left:50%;top:50%;width:166px;height:166px;z-index:4;color:#fff9f2;background:radial-gradient(circle at 35% 22%,#48525a,#202b32 60%,#151d23);border:1px solid #bd9d8b88;box-shadow:0 0 0 9px #1b2830,0 0 0 10px #b6c2bc44,0 0 44px #cb7c6d24,0 25px 65px #0009}
+.nexus-orbit .hub:before,.nexus-orbit .hub:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.nexus-orbit .hub:before{inset:-19px;border:1px solid #d2a59d77;border-top-color:transparent;animation:ring-center 18s linear infinite}
+.nexus-orbit .hub:after{inset:-30px;border:1px solid #d8bfb726;border-bottom-color:#e3aba69b;animation:ring-center 27s linear infinite reverse}
+.nexus-orbit .hub span:first-child{font-size:9px;letter-spacing:.18em;color:#e0c3b8;font-weight:720}
+.nexus-orbit .hub strong{font:400 32px/1 var(--serif);color:#fffaf5;margin:10px 0 8px}
+.nexus-orbit .hub strong i{color:#e48c82}
+.nexus-orbit .hub small{font-size:10px;color:#b6c1c4}
+.nexus-orbit .unit{--x:50%;--y:50%;left:var(--x);top:var(--y);z-index:5;width:220px;min-width:0;min-height:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center;border:0;border-radius:0;background:none;box-shadow:none;color:#fff;transform:translate(-50%,-50%);transition:transform .22s}
+.nexus-orbit .unit:hover,.nexus-orbit .unit:focus-visible{border:0;border-radius:0;background:none;box-shadow:none;transform:translate(-50%,-50%) scale(1.075)}
+.nexus-orbit .unit.briq{--x:22%;--y:33%}
+.nexus-orbit .unit.icst{--x:78%;--y:33%}
+.nexus-orbit .unit.dernek{--x:50%;--y:82%}
+.nexus-orbit .unit .symbol{display:grid;place-items:center;width:91px;height:91px;position:relative;border-radius:50%;font-size:36px;line-height:1;color:#f0b7a9;background:radial-gradient(circle at 30% 23%,#6b4142,#372b2f 61%,#211c22);border:1px solid #d18c8575;box-shadow:0 0 0 6px #cd8c7e20,0 0 0 7px #d3a39e2a,0 0 26px #d47a702e,0 14px 43px #0008;animation:node-float 6.3s ease-in-out infinite;transition:box-shadow .2s}
+.nexus-orbit .unit.icst .symbol{background:radial-gradient(circle at 30% 23%,#36676b,#21444b 60%,#192c32);color:#a3e7dc;border-color:#79c5bd9c;box-shadow:0 0 0 6px #72b5b220,0 0 0 7px #79bbb72b,0 0 28px #70bcb42d,0 14px 43px #0008;animation-delay:-2.1s}
+.nexus-orbit .unit.dernek .symbol{background:radial-gradient(circle at 30% 23%,#736350,#483b33 60%,#282422);color:#f2d5b3;border-color:#d9bd9995;box-shadow:0 0 0 6px #d4b18e20,0 0 0 7px #d5bd9e2b,0 0 28px #d6b38b28,0 14px 43px #0008;animation-delay:-3.7s}
+.nexus-orbit .unit .symbol:after{content:"";position:absolute;inset:-13px;border-radius:50%;border:1px solid currentColor;opacity:0;transition:opacity .2s,transform .2s}
+.nexus-orbit .unit:hover .symbol:after,.nexus-orbit .unit:focus-visible .symbol:after{opacity:.55;transform:scale(1.1)}
+.nexus-orbit .unit:hover .symbol,.nexus-orbit .unit:focus-visible .symbol{box-shadow:0 0 0 7px #d8aaa12f,0 0 0 8px #efb8b586,0 0 45px #c978734d,0 20px 45px #0009}
+.nexus-orbit .unit .glyph{font-size:inherit;filter:drop-shadow(0 0 9px currentColor)}
+.nexus-orbit .unit .words strong{font-size:17px;letter-spacing:.12em;line-height:1.2;color:#fffaf5;font-weight:770}
+.nexus-orbit .unit .words small{color:#aebec3;font-size:10px;letter-spacing:.02em;margin-top:6px;white-space:nowrap}
+.nexus-orbit .unit .enter{font-size:9px;color:#e8a69c;letter-spacing:.2em;font-weight:750;opacity:0;transform:translateY(-5px);transition:opacity .2s,transform .2s}
+.nexus-orbit .unit:hover .enter,.nexus-orbit .unit:focus-visible .enter{opacity:1;transform:none}
+.nexus-orbit .stage-bottom{position:absolute;bottom:24px;left:28px;right:28px;z-index:3;display:flex;align-items:center;justify-content:space-between;color:#c7d0d1;font-size:10px;gap:10px}
+.nexus-orbit .stage-bottom>span:first-child,.nexus-orbit .stage-bottom>span:last-child{font-size:8px;letter-spacing:.14em;color:#81969c;font-weight:720}
+.nexus-orbit .stage-bottom>b,.nexus-orbit .stage-bottom span b{color:#ca8882}
+.nexus-orbit #map-status{text-align:center}
+.nexus-orbit .edge-chip,.nexus-orbit .graph-foot{display:none}
+@keyframes orbit-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes ring-center{to{transform:rotate(360deg)}}
+@keyframes node-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes edge-flow{to{stroke-dashoffset:-160}}
+@keyframes nebula-move{to{transform:translate(30px,-21px) scale(1.11)}}
+@keyframes led-pulse{50%{opacity:.55;box-shadow:0 0 5px #e6a7a0}}
+@media(max-width:760px){
+ .nexus-orbit{min-height:555px;height:65vh;border-radius:20px}
+ .nexus-orbit .unit{width:41%}
+ .nexus-orbit .unit .symbol{width:78px;height:78px;font-size:30px}
+ .nexus-orbit .hub{width:138px;height:138px}
+ .nexus-orbit .hub strong{font-size:27px}
+ .nexus-orbit .ring-a{width:315px;height:315px}
+ .nexus-orbit .ring-b{width:440px;height:440px}
+}
+@media(max-width:600px){
+ .intro h1{font-size:clamp(28px,7.4vw,37px)}
+ .nexus-orbit{min-height:535px;height:calc(100dvh - 230px);max-height:720px;margin-top:20px;border-radius:17px}
+ .nexus-orbit .stage-top{font-size:8px;top:19px;left:17px;right:17px}
+ .nexus-orbit .hub{top:51%;width:122px;height:122px}
+ .nexus-orbit .hub strong{font-size:22px;margin:7px 0}
+ .nexus-orbit .hub span:first-child{font-size:7px}
+ .nexus-orbit .hub small{font-size:8px}
+ .nexus-orbit .hub:before{inset:-12px}
+ .nexus-orbit .hub:after{inset:-23px}
+ .nexus-orbit .ring-a{width:250px;height:250px}
+ .nexus-orbit .ring-b{width:360px;height:360px}
+ .nexus-orbit .unit{width:46%;gap:8px}
+ .nexus-orbit .unit.briq{--x:25%;--y:28%}
+ .nexus-orbit .unit.icst{--x:75%;--y:28%}
+ .nexus-orbit .unit.dernek{--x:50%;--y:80%}
+ .nexus-orbit .unit .symbol{width:64px;height:64px;font-size:26px}
+ .nexus-orbit .unit .words strong{font-size:13px}
+ .nexus-orbit .unit .words small{font-size:8px;white-space:normal;line-height:1.35;margin-top:5px}
+ .nexus-orbit .unit .enter{display:none}
+ .nexus-orbit .stage-bottom{justify-content:center;left:12px;right:12px;bottom:17px}
+ .nexus-orbit .stage-bottom>span:first-child,.nexus-orbit .stage-bottom>span:last-child{display:none}
+ .nexus-orbit #map-status{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.nexus-orbit *,.nexus-orbit:before,.nexus-orbit:after{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -128,15 +219,25 @@ h1{font-size:32px}
 </header>
 <main>
 <section id="home" aria-label="Nexus kurumsal bağlantı haritası">
-<div class="intro"><div class="eyebrow">TÜRK-ÇİN İŞ DER / NEXUS</div><h1>Ayrı çalışma alanları. <em>Tek bağlam.</em></h1><p>BRIQ ile başlıyoruz. Kişiler, kurumlar ve işler birbiriyle bağlantılı kalıyor.</p></div>
-<div class="graph" id="graph">
-<svg id="trails" aria-hidden="true"></svg>
-<div class="hub" id="hub"><span>TÜRK-ÇİN İŞ DER</span><strong>NEXUS<i>.</i></strong><small>Ortak çekirdek</small></div>
-<button class="unit briq" data-unit="briq" type="button"><span class="symbol" aria-hidden="true">✳</span><span class="words"><strong>BRIQ</strong><small>Yayın ve editoryal işler</small></span></button>
-<button class="unit icst" data-unit="icst" type="button"><span class="symbol" aria-hidden="true">◈</span><span class="words"><strong>ICST</strong><small>Kurumsal çalışma alanı</small></span></button>
-<button class="unit dernek" data-unit="association" type="button"><span class="symbol" aria-hidden="true">◎</span><span class="words"><strong>Dernek</strong><small>Yönetim ve projeler</small></span></button>
-<span class="edge-chip network">Ortak Network</span><span class="edge-chip archive">Ortak Arşiv</span>
-<div class="graph-foot"><b>BRIQ</b> bağlantılı · ICST ve dernek modülleri yapılandırılıyor</div>
+<div class="intro"><div class="eyebrow">TÜRK-ÇİN İŞ DER / NEXUS</div><h1>Her şey <em>birbirine bağlı.</em></h1><p>Bir düğüm seçin; BRIQ, ICST ve dernek tek merkezde buluşsun.</p></div>
+<div class="graph nexus-orbit" id="graph">
+ <div class="orbit-grain" aria-hidden="true"></div>
+ <div class="orbit-halo" aria-hidden="true"></div>
+ <div class="orbit-ring ring-a" aria-hidden="true"></div>
+ <div class="orbit-ring ring-b" aria-hidden="true"></div>
+ <div class="stage-top"><span><b class="live-led"></b> NEXUS / CONNECTED SPACE</span><span>01 — 03</span></div>
+ <svg id="trails" aria-hidden="true" preserveAspectRatio="none"></svg>
+ <div class="hub" id="hub"><span>ÇİN İŞ DER</span><strong>NEXUS<i>.</i></strong><small>Ortak çekirdek</small></div>
+ <button class="unit briq" data-unit="briq" type="button" aria-label="BRIQ çalışma alanını aç">
+   <span class="symbol"><span class="glyph">✳</span></span><span class="words"><strong>BRIQ</strong><small>Yayın · Editorial · Network</small></span><span class="enter">AÇ ↗</span>
+ </button>
+ <button class="unit icst" data-unit="icst" type="button" aria-label="ICST çalışma alanını aç">
+   <span class="symbol"><span class="glyph">◈</span></span><span class="words"><strong>ICST</strong><small>Araştırma · İş birlikleri</small></span><span class="enter">KEŞFET ↗</span>
+ </button>
+ <button class="unit dernek" data-unit="association" type="button" aria-label="Dernek çalışma alanını aç">
+   <span class="symbol"><span class="glyph">◎</span></span><span class="words"><strong>DERNEK</strong><small>Yönetim · Projeler</small></span><span class="enter">KEŞFET ↗</span>
+ </button>
+ <div class="stage-bottom"><span>ÜÇ BİRİM · ORTAK BAĞLAM</span><span id="map-status" role="status" aria-live="polite">Bir düğüme dokunun, bağlantıyı keşfedin.</span><span>NETWORK <b>·</b> ARCHIVE</span></div>
 </div>
 </section>
 <section class="module-panel" id="detail" hidden aria-labelledby="detail-title">
@@ -166,20 +267,37 @@ association:{name:"Dernek",kicker:"NEXUS / ANA KURUM",copy:"Çin İş Geliştirm
 };
 const $=id=>document.getElementById(id);
 const nodes=[...document.querySelectorAll('[data-unit]')];
+
 function draw(){
- const box=$("graph").getBoundingClientRect(),h=$("hub").getBoundingClientRect();
- if($("home").hidden||box.width<1)return;
- const x=h.left+h.width/2-box.left,y=h.top+h.height/2-box.top,svg=$("trails");
- svg.replaceChildren();svg.setAttribute("viewBox",`0 0 ${box.width} ${box.height}`);
- for(const n of nodes){
-  const r=n.getBoundingClientRect(),line=document.createElementNS("http://www.w3.org/2000/svg","line");
-  line.setAttribute("x1",x);line.setAttribute("y1",y);
-  line.setAttribute("x2",r.left+r.width/2-box.left);line.setAttribute("y2",r.top+r.height/2-box.top);
-  line.dataset.edge=n.dataset.unit;svg.append(line);
+ const stage=$("graph"),svg=$("trails"),hub=$("hub");
+ if($("home").hidden)return;
+ const box=stage.getBoundingClientRect(),h=hub.getBoundingClientRect();
+ if(box.width<1||box.height<1)return;
+ const x=h.left+h.width/2-box.left,y=h.top+h.height/2-box.top,NS="http://www.w3.org/2000/svg";
+ svg.setAttribute("viewBox","0 0 "+box.width+" "+box.height);
+ svg.replaceChildren();
+ const noMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ for(const [i,n] of nodes.entries()){
+  const r=n.querySelector(".symbol").getBoundingClientRect();
+  const ex=r.left+r.width/2-box.left,ey=r.top+r.height/2-box.top;
+  const dx=ex-x,dy=ey-y,bend=i===2?0:(i===0?-21:21);
+  const d="M "+x+" "+y+" C "+(x+dx*.23)+" "+(y+dy*.14+bend)+" "+(x+dx*.76)+" "+(y+dy*.8-bend)+" "+ex+" "+ey;
+  const path=document.createElementNS(NS,"path");path.setAttribute("d",d);path.dataset.edge=n.dataset.unit;svg.append(path);
+  if(!noMotion){
+   const p=document.createElementNS(NS,"circle");p.setAttribute("r",i===0?"4":"3");
+   p.setAttribute("fill",["#f0bbb4","#97e3d6","#f0d6b2"][i]);
+   const motion=document.createElementNS(NS,"animateMotion");motion.setAttribute("path",d);motion.setAttribute("dur",(3.5+i*.75)+"s");motion.setAttribute("begin",(-i*.9)+"s");motion.setAttribute("repeatCount","indefinite");
+   p.append(motion);svg.append(p);
+  }
  }
 }
 function active(key){
- for(const l of $("trails").querySelectorAll("line"))l.classList.toggle("hot",l.dataset.edge===key);
+ for(const l of $("trails").querySelectorAll("path[data-edge]"))l.classList.toggle("hot",l.dataset.edge===key);
+ $("map-status").textContent=({
+  briq:"BRIQ · Yayın ve editoryal süreçler",
+  icst:"ICST · Araştırma ve iş birlikleri",
+  association:"DERNEK · Yönetim ve projeler"
+ })[key]||"Bir düğüme dokunun, bağlantıyı keşfedin.";
 }
 for(const n of nodes){
  n.addEventListener("click",()=>{location.hash="/"+n.dataset.unit;});
@@ -214,6 +332,7 @@ function route(){
 $("back").addEventListener("click",()=>{location.hash="/";});
 window.addEventListener("hashchange",route);
 window.addEventListener("resize",()=>requestAnimationFrame(draw));
+document.addEventListener("visibilitychange",()=>{const svg=$("trails");if(document.hidden&&svg.pauseAnimations)svg.pauseAnimations();else if(svg.unpauseAnimations)svg.unpauseAnimations();});
 let previousFocus=null;
 function renderSearch(){
  const q=$("query").value.toLocaleLowerCase("tr-TR"),root=$("results");root.replaceChildren();
