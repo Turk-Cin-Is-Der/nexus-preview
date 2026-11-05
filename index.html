@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="color-scheme" content="light">
+<title>Nexus · Türk-Çin İş Der</title>
+<style>
+:root{--paper:#f7f5f0;--panel:#fffefa;--ink:#21201e;--muted:#827b73;--line:#dedbd2;--red:#aa1f28;--sand:#eee5d8;--teal:#367a74;--serif:Georgia,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font:400 14px/1.5 var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #bd6569;outline-offset:4px}[hidden]{display:none!important}
+.shell{min-height:100dvh;display:flex;flex-direction:column}
+.top{border-bottom:1px solid var(--line);background:rgba(255,254,250,.9);height:87px;padding:0 max(22px,calc((100vw - 1210px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}
+.identity{display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--ink)}
+.identity img{width:130px;height:56px;object-fit:contain}
+.divider{height:33px;width:1px;background:#d3ccc2}
+.product{display:flex;flex-direction:column;line-height:1.35}
+.product strong{font-weight:800;letter-spacing:.21em;font-size:16px}
+.product small{font-size:10px;color:var(--muted);letter-spacing:.06em}
+.header-end{display:flex;align-items:center;gap:18px}
+.preview{font-size:10px;color:#938980}
+.preview:before{content:"";display:inline-block;width:6px;height:6px;background:#bb9083;border-radius:50%;margin-right:7px}
+.search{border:1px solid var(--line);border-radius:99px;background:var(--panel);padding:9px 12px;color:#71645d;font-size:12px}
+.search:hover{border-color:#bd9590}
+main{flex:1;max-width:1210px;margin:0 auto;width:100%;padding:36px 23px 20px}
+.intro{text-align:center}
+.eyebrow{font-size:10px;letter-spacing:.2em;font-weight:760;color:#867b74}
+.eyebrow:before{content:"✳";color:var(--red);font-size:13px;margin-right:8px}
+h1{font:400 clamp(29px,3.8vw,53px)/1.12 var(--serif);letter-spacing:-.025em;margin:12px 0 10px}
+h1 em{font-weight:400;color:var(--red)}
+.intro p{color:#80766f;font-size:13px}
+.graph{position:relative;margin:5px auto 0;max-width:1100px;height:min(65vh,570px);min-height:490px}
+.graph:before{content:"";position:absolute;inset:10% 8%;border-radius:50%;background:radial-gradient(ellipse at center,#ebe2d8aa 0%,#eee4db50 26%,transparent 63%);pointer-events:none}
+.graph svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.graph line{stroke:#aa8e83;stroke-width:1.5;stroke-dasharray:4 7;transition:stroke .2s,stroke-width .2s}
+.graph line.hot{stroke:var(--red);stroke-width:2.5;stroke-dasharray:none}
+.hub{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);border-radius:50%;width:162px;height:162px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff9f4;background:radial-gradient(circle at 28% 19%,#514643,#211d1b 75%);box-shadow:0 0 0 10px var(--paper),0 0 0 11px #d6c2b7,0 22px 50px #38292127}
+.hub span:first-child{color:#dcc5b7;font-size:9px;letter-spacing:.2em;font-weight:730}
+.hub strong{font:400 31px var(--serif);margin:2px 0}
+.hub strong i{font-style:normal;color:#e88883}
+.hub small{font-size:10px;color:#c7b3aa}
+.unit{position:absolute;transform:translate(-50%,-50%);background:var(--panel);border:1px solid #e0d3c8;border-radius:17px;box-shadow:0 13px 32px #3a271610;min-width:186px;min-height:91px;display:flex;gap:11px;align-items:center;text-align:left;padding:15px 17px;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s;z-index:2}
+.unit:hover,.unit:focus-visible{transform:translate(-50%,-50%) translateY(-4px);border-color:#ce9f9a;box-shadow:0 18px 46px #4a27221f}
+.unit .symbol{font-size:30px;line-height:1;color:var(--red)}
+.unit .words{display:flex;flex-direction:column}
+.unit strong{font-size:15px;font-weight:740}
+.unit small{color:#91857b;font-size:10px;margin-top:3px}
+.unit.briq{left:24%;top:26%}
+.unit.icst{left:76%;top:26%}
+.unit.dernek{left:50%;top:87%}
+.unit.icst .symbol{color:var(--teal)}
+.unit.dernek .symbol{color:#9b7764}
+.edge-chip{position:absolute;z-index:1;font-size:10px;color:#83776c;border-radius:99px;border:1px solid #ddd1c7;background:#fdfaf5;padding:7px 12px;white-space:nowrap}
+.edge-chip.network{top:54%;left:10%}
+.edge-chip.archive{top:54%;right:10%}
+.graph-foot{text-align:center;color:#948a80;font-size:11px;position:absolute;bottom:0;left:0;right:0}
+.graph-foot b{font-weight:650;color:var(--red)}
+footer{text-align:center;color:#9f948a;font-size:10px;letter-spacing:.02em;padding:20px}
+.module-panel{max-width:970px;margin:0 auto;min-height:540px}
+.back{padding:10px 0;border:0;background:none;color:#86766d;font-size:12px}
+.back:hover{color:var(--red)}
+.module-layout{margin-top:32px;display:grid;grid-template-columns:1fr 1.08fr;gap:25px}
+.module-hero,.module-content{border-radius:22px;min-height:410px;padding:38px}
+.module-hero{color:#fffaf4;background:radial-gradient(circle at 95% 15%,#66433d,#211d1b 61%);display:flex;flex-direction:column}
+.module-hero h2{font:400 clamp(43px,5vw,68px)/1 var(--serif);margin:19px 0}
+.module-hero p{color:#d0bbb1;font-size:14px;max-width:330px}
+.module-hero .tag{font-size:10px;letter-spacing:.16em;font-weight:780;color:#d79b94}
+.module-hero img{width:112px;height:82px;object-fit:contain;align-self:flex-start;background:#fffefa;border-radius:11px;padding:3px;margin-top:auto}
+.module-content{border:1px solid #eae1d9;background:#fffefa}
+.module-content h3{font:400 31px var(--serif);margin:9px 0 24px}
+.module-content .item{border:1px solid #e8ddd4;border-radius:12px;padding:16px 18px;margin:9px 0;display:flex;align-items:center;justify-content:space-between;color:#342c28;text-decoration:none;background:#faf7f2}
+.module-content a.item:hover{border-color:#c79c97;transform:translateX(2px)}
+.item strong{display:block;font-size:13px}
+.item small{display:block;color:#95877d;font-size:10px;margin-top:3px}
+.item .arrow{color:var(--red);font-size:18px}
+.empty{border:1px dashed #cdbeb1;border-radius:12px;padding:21px;color:#8e8077;font-size:12px;line-height:1.7}
+.note{color:#a09389;font-size:10px;margin-top:24px}
+.overlay{position:fixed;inset:0;z-index:20;background:#1c1714a8;display:flex;justify-content:center;align-items:flex-start;padding:13vh 16px}
+.dialog{width:min(100%,470px);background:var(--panel);padding:25px;border-radius:16px}
+.dialog h2{font:400 26px var(--serif);margin:0 0 15px}
+.dialog input{width:100%;padding:15px;background:#faf8f4;border:1px solid #e5d9d1;border-radius:11px}
+.dialog .result{display:block;width:100%;border:0;background:none;text-align:left;padding:12px 9px;border-bottom:1px solid #eee8e3}
+.dialog .result:hover{background:#f8f0e9}
+.dialog .result small{display:block;color:#91847b;font-size:10px}
+.dialog .close{float:right;background:none;border:0;font-size:25px;color:#987f75}
+.dialog p{margin:12px 0 0;font-size:10px;color:#8f8077}
+@media(max-width:700px){
+.top{height:76px;padding:0 15px}
+.identity{gap:9px}
+.identity img{width:94px;height:53px}
+.divider{height:28px}
+.product strong{font-size:12px}
+.product small,.preview{display:none}
+main{padding:30px 10px 8px}
+h1{font-size:32px}
+.graph{min-height:560px;height:calc(100dvh - 220px);max-height:650px}
+.hub{top:52%;width:125px;height:125px}
+.hub strong{font-size:24px}
+.unit{min-width:0;width:37%;min-height:77px;padding:10px;border-radius:12px;gap:5px}
+.unit .symbol{font-size:19px}
+.unit strong{font-size:12px}
+.unit small{font-size:9px}
+.unit.briq{left:23%;top:24%}
+.unit.icst{left:77%;top:24%}
+.unit.dernek{left:50%;top:83%}
+.edge-chip{font-size:9px;padding:6px 9px}
+.edge-chip.network{left:0;top:60%}
+.edge-chip.archive{right:0;top:60%}
+.module-panel{padding:2px 12px}
+.module-layout{grid-template-columns:1fr;gap:15px;margin-top:17px}
+.module-hero,.module-content{min-height:250px;padding:28px}
+.module-hero img{margin-top:24px}
+.module-hero h2{font-size:50px}
+}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+<a class="identity" href="#/" aria-label="Nexus ana sayfa">
+<img alt="Çin İş Geliştirme ve Dostluk Derneği logosu" src="https://static.wixstatic.com/media/43e3d5_88027aaa7ebc45cd98797eacd2624b76~mv2.png/v1/fill/w_130,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cinisder%20Logo.png">
+<span class="divider"></span><span class="product"><strong>NEXUS</strong><small>Kurumsal çalışma alanı</small></span>
+</a>
+<div class="header-end"><span class="preview">Konsept · Canlı veri içermez</span><button class="search" id="search" type="button">⌕ Ara <span aria-hidden="true">⌘K</span></button></div>
+</header>
+<main>
+<section id="home" aria-label="Nexus kurumsal bağlantı haritası">
+<div class="intro"><div class="eyebrow">TÜRK-ÇİN İŞ DER / NEXUS</div><h1>Ayrı çalışma alanları. <em>Tek bağlam.</em></h1><p>BRIQ ile başlıyoruz. Kişiler, kurumlar ve işler birbiriyle bağlantılı kalıyor.</p></div>
+<div class="graph" id="graph">
+<svg id="trails" aria-hidden="true"></svg>
+<div class="hub" id="hub"><span>TÜRK-ÇİN İŞ DER</span><strong>NEXUS<i>.</i></strong><small>Ortak çekirdek</small></div>
+<button class="unit briq" data-unit="briq" type="button"><span class="symbol" aria-hidden="true">✳</span><span class="words"><strong>BRIQ</strong><small>Yayın ve editoryal işler</small></span></button>
+<button class="unit icst" data-unit="icst" type="button"><span class="symbol" aria-hidden="true">◈</span><span class="words"><strong>ICST</strong><small>Kurumsal çalışma alanı</small></span></button>
+<button class="unit dernek" data-unit="association" type="button"><span class="symbol" aria-hidden="true">◎</span><span class="words"><strong>Dernek</strong><small>Yönetim ve projeler</small></span></button>
+<span class="edge-chip network">Ortak Network</span><span class="edge-chip archive">Ortak Arşiv</span>
+<div class="graph-foot"><b>BRIQ</b> bağlantılı · ICST ve dernek modülleri yapılandırılıyor</div>
+</div>
+</section>
+<section class="module-panel" id="detail" hidden aria-labelledby="detail-title">
+<button class="back" id="back" type="button">← Bağlantı haritasına dön</button>
+<div class="module-layout">
+<div class="module-hero"><span class="tag" id="detail-kicker"></span><h2 id="detail-title"></h2><p id="detail-copy"></p><img id="briq-logo" alt="BRIQ dergisi logosu" src="https://briqjournal.com/assets/briq-logo-tr.png" hidden></div>
+<div class="module-content"><span class="eyebrow">ÇALIŞMA ALANLARI</span><h3 id="detail-subtitle"></h3><div id="detail-links"></div><p class="note" id="detail-note"></p></div>
+</div>
+</section>
+</main>
+<footer>ÇİN İŞ DER · NEXUS — ÖZEL TASARIM ÖNİZLEMESİ · GERÇEK KURUM KAYITLARI İÇERMEZ</footer>
+</div>
+<div class="overlay" id="overlay" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<button class="close" id="close" aria-label="Kapat" type="button">×</button><h2 id="search-title">Nereye gitmek istersiniz?</h2>
+<label for="query" style="position:absolute;clip-path:inset(100%)">Çalışma alanı ara</label>
+<input id="query" type="search" placeholder="BRIQ, ICST, Network, Editorial…" autocomplete="off">
+<div id="results"></div><p>Modül araması · ESC ile kapat</p>
+</div></div>
+<script>
+(()=>{
+"use strict";
+const units={
+briq:{name:"BRIQ",kicker:"NEXUS / BAĞLI YAYIN BİRİMİ",copy:"BRIQ dergisinin editoryal, yayın, ağ ve kurul süreçleri. Mevcut BRIQ Network sistemi korunarak bağlantı sağlanır.",subtitle:"BRIQ ile çalışın",note:"Mevcut BRIQ Network uygulaması ayrı erişim korumasına sahiptir. Burada gerçek yayın verisi bulunmaz.",
+items:[["Editorial · Yayın ve Hakemlik","Yayın ve değerlendirme akışı","https://network.briqjournal.com/yayin-ve-hakemlik/"],["Network · Kişiler ve İlişkiler","Yazarlar, kurumlar, bağlantılar","https://network.briqjournal.com/kisiler-ve-iliskiler/"],["Yayın Geçmişi","Mevcut yayın kayıtları","https://network.briqjournal.com/yayin-gecmisi/"],["Kurullar ve Görevler","BRIQ editoryal sorumlulukları","https://network.briqjournal.com/kurullar-ve-gorevler/"]]},
+icst:{name:"ICST",kicker:"NEXUS / BAĞLI BİRİM",copy:"ICST ayrı bir çalışma birimi olarak tanımlandı. Ortak kişi, kurum ve proje bağlantıları yetki kapsamında kullanılacak.",subtitle:"ICST modülleri",note:"Bu birimde henüz canlı veriye veya çalışan bağımsız modüle bağlantı yok.",items:[]},
+association:{name:"Dernek",kicker:"NEXUS / ANA KURUM",copy:"Çin İş Geliştirme ve Dostluk Derneği. Yönetişim, etkinlik, projeler ve kurumsal hafıza ortak çekirdeğe bağlanacak.",subtitle:"Dernek yönetimi",note:"Dernek yönetim modülleri henüz canlı değil. Gerçek belge ve üyelik verileri aktarılmadı.",items:[]}
+};
+const $=id=>document.getElementById(id);
+const nodes=[...document.querySelectorAll('[data-unit]')];
+function draw(){
+ const box=$("graph").getBoundingClientRect(),h=$("hub").getBoundingClientRect();
+ if($("home").hidden||box.width<1)return;
+ const x=h.left+h.width/2-box.left,y=h.top+h.height/2-box.top,svg=$("trails");
+ svg.replaceChildren();svg.setAttribute("viewBox",`0 0 ${box.width} ${box.height}`);
+ for(const n of nodes){
+  const r=n.getBoundingClientRect(),line=document.createElementNS("http://www.w3.org/2000/svg","line");
+  line.setAttribute("x1",x);line.setAttribute("y1",y);
+  line.setAttribute("x2",r.left+r.width/2-box.left);line.setAttribute("y2",r.top+r.height/2-box.top);
+  line.dataset.edge=n.dataset.unit;svg.append(line);
+ }
+}
+function active(key){
+ for(const l of $("trails").querySelectorAll("line"))l.classList.toggle("hot",l.dataset.edge===key);
+}
+for(const n of nodes){
+ n.addEventListener("click",()=>{location.hash="/"+n.dataset.unit;});
+ n.addEventListener("mouseenter",()=>active(n.dataset.unit));
+ n.addEventListener("mouseleave",()=>active(null));
+ n.addEventListener("focus",()=>active(n.dataset.unit));
+ n.addEventListener("blur",()=>active(null));
+}
+function route(){
+ const key=location.hash.replace(/^#\/?/,"").split("/")[0];
+ const data=Object.prototype.hasOwnProperty.call(units,key)?units[key]:null;
+ $("home").hidden=!!data;$("detail").hidden=!data;
+ document.title=(data?data.name+" · ":"")+"Nexus · Türk-Çin İş Der";
+ if(!data){requestAnimationFrame(draw);return;}
+ $("detail-kicker").textContent=data.kicker;$("detail-title").textContent=data.name;
+ $("detail-copy").textContent=data.copy;$("detail-subtitle").textContent=data.subtitle;
+ $("detail-note").textContent=data.note;$("briq-logo").hidden=key!=="briq";
+ const container=$("detail-links");container.replaceChildren();
+ if(!data.items.length){
+  const p=document.createElement("p");p.className="empty";
+  p.textContent="Bu çalışma alanının modülleri planlandı. Henüz içerik eklenmedi; gerçek veri veya sahte kayıt gösterilmiyor.";
+  container.append(p);
+ }
+ for(const [title,desc,href] of data.items){
+  const a=document.createElement("a");a.className="item";a.href=href;a.rel="noopener noreferrer";
+  const wrap=document.createElement("span"),bold=document.createElement("strong"),small=document.createElement("small"),arrow=document.createElement("span");
+  bold.textContent=title;small.textContent=desc;wrap.append(bold,small);
+  arrow.className="arrow";arrow.textContent="↗";a.append(wrap,arrow);container.append(a);
+ }
+ window.scrollTo(0,0);
+}
+$("back").addEventListener("click",()=>{location.hash="/";});
+window.addEventListener("hashchange",route);
+window.addEventListener("resize",()=>requestAnimationFrame(draw));
+let previousFocus=null;
+function renderSearch(){
+ const q=$("query").value.toLocaleLowerCase("tr-TR"),root=$("results");root.replaceChildren();
+ for(const [key,v] of Object.entries(units)){
+  const all=[v.name,v.copy,v.subtitle,...v.items.map(i=>i[0])].join(" ").toLocaleLowerCase("tr-TR");
+  if(q&&!all.includes(q))continue;
+  const b=document.createElement("button");b.type="button";b.className="result";
+  const title=document.createElement("strong"),sub=document.createElement("small");
+  title.textContent=v.name;sub.textContent=v.subtitle;b.append(title,sub);
+  b.addEventListener("click",()=>{close();location.hash="/"+key;});root.append(b);
+ }
+ if(!root.childElementCount){const p=document.createElement("p");p.textContent="Eşleşen çalışma alanı bulunamadı.";root.append(p);}
+}
+function open(){previousFocus=document.activeElement;$("overlay").hidden=false;$("query").value="";renderSearch();$("query").focus();}
+function close(){$("overlay").hidden=true;if(previousFocus?.isConnected)previousFocus.focus();}
+$("search").addEventListener("click",open);
+$("close").addEventListener("click",close);
+$("query").addEventListener("input",renderSearch);
+$("overlay").addEventListener("click",e=>{if(e.target===$("overlay"))close();});
+window.addEventListener("keydown",e=>{
+ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){
+  e.preventDefault();$("overlay").hidden?open():close();
+ }
+ if(e.key==="Escape"&&!$("overlay").hidden){e.preventDefault();close();}
+ if(e.key==="Tab"&&!$("overlay").hidden){
+  const fs=[$("close"),$("query"),...$("results").querySelectorAll("button")],at=fs.indexOf(document.activeElement);
+  if(e.shiftKey&&at===0){e.preventDefault();fs.at(-1).focus();}
+  else if(!e.shiftKey&&at===fs.length-1){e.preventDefault();fs[0].focus();}
+ }
+});
+route();
+})();
+</script>
+</body>
+</html>
